@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nabomma - Watch Movies Online</title>
+<title>CineStream - Watch Movies Online</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -335,7 +335,6 @@
 
 <div class="loading-bar" id="loadBar" style="width:0%"></div>
 
-<!-- NAV -->
 <nav id="navbar">
   <div class="nav-logo">CineStream</div>
   <div class="nav-links">
@@ -350,7 +349,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
@@ -376,7 +374,6 @@
   </div>
 </section>
 
-<!-- TRENDING -->
 <section class="section" id="trending">
   <div class="section-header reveal">
     <h2 class="section-title">🔥 <span>Trending</span> Now</h2>
@@ -385,7 +382,46 @@
   <div class="movie-row reveal" id="trendingRow"></div>
 </section>
 
-<!-- TOP 10 -->
+<section class="section" id="tollywood">
+  <div class="section-header reveal">
+    <h2 class="section-title">🕉️ <span>Tollywood</span> Movies</h2>
+    <a href="#" class="see-all">See All →</a>
+  </div>
+  <div class="movie-row reveal" id="tollywoodRow"></div>
+</section>
+
+<section class="section" id="bollywood">
+  <div class="section-header reveal">
+    <h2 class="section-title">🌟 <span>Bollywood</span> Movies</h2>
+    <a href="#" class="see-all">See All →</a>
+  </div>
+  <div class="movie-row reveal" id="bollywoodRow"></div>
+</section>
+
+<section class="section" id="kollywood">
+  <div class="section-header reveal">
+    <h2 class="section-title">⚔️ <span>Kollywood</span> Movies</h2>
+    <a href="#" class="see-all">See All →</a>
+  </div>
+  <div class="movie-row reveal" id="kollywoodRow"></div>
+</section>
+
+<section class="section" id="mollywood">
+  <div class="section-header reveal">
+    <h2 class="section-title">🎨 <span>Mollywood</span> Movies</h2>
+    <a href="#" class="see-all">See All →</a>
+  </div>
+  <div class="movie-row reveal" id="mollywoodRow"></div>
+</section>
+
+<section class="section" id="hollywood">
+  <div class="section-header reveal">
+    <h2 class="section-title">🎬 <span>Hollywood</span> Movies</h2>
+    <a href="#" class="see-all">See All →</a>
+  </div>
+  <div class="movie-row reveal" id="hollywoodRow"></div>
+</section>
+
 <section class="section">
   <div class="section-header reveal">
     <h2 class="section-title">Top <span>10</span> This Week</h2>
@@ -394,7 +430,6 @@
   <div class="top10-row reveal" id="top10Row"></div>
 </section>
 
-<!-- FEATURED BANNER -->
 <div class="featured-banner reveal" onclick="openMovieById('dune2')">
   <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" alt="Dune">
   <div class="featured-overlay">
@@ -407,7 +442,6 @@
   </div>
 </div>
 
-<!-- ALL MOVIES -->
 <section class="section" id="movies">
   <div class="section-header reveal">
     <h2 class="section-title">All <span>Movies</span></h2>
@@ -416,23 +450,6 @@
   <div class="movie-row reveal" id="allMoviesRow"></div>
 </section>
 
-<!-- ACTION -->
-<section class="section">
-  <div class="section-header reveal">
-    <h2 class="section-title">💥 <span>Action</span> & Thriller</h2>
-  </div>
-  <div class="movie-row reveal" id="actionRow"></div>
-</section>
-
-<!-- SCI-FI -->
-<section class="section">
-  <div class="section-header reveal">
-    <h2 class="section-title">🚀 <span>Sci-Fi</span> Universe</h2>
-  </div>
-  <div class="movie-row reveal" id="scifiRow"></div>
-</section>
-
-<!-- GENRES -->
 <section class="section" id="genres">
   <div class="section-header reveal">
     <h2 class="section-title">Browse by <span>Genre</span></h2>
@@ -440,7 +457,6 @@
   <div class="genre-grid reveal" id="genreGrid"></div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">CineStream</div>
   <p class="footer-text">Your ultimate destination for movies and entertainment. Stream the latest blockbusters, classics, and exclusive content.</p>
@@ -452,11 +468,10 @@
     <a href="#">Contact</a>
   </div>
   <div class="footer-bottom">
-    © 2024 CineStream. Final Year Project -- Online Movie Website. All rights reserved.
+    © 2024 CineStream. Final Year Project — Online Movie Website. All rights reserved.
   </div>
 </footer>
 
-<!-- MOVIE DETAIL MODAL -->
 <div class="modal-overlay" id="movieModal">
   <div class="modal" id="modalContent">
     <div class="modal-video" id="modalVideoArea"></div>
@@ -483,7 +498,6 @@
   </div>
 </div>
 
-<!-- TRAILER FULLSCREEN -->
 <div class="trailer-overlay" id="trailerOverlay">
   <div class="trailer-inner">
     <button class="trailer-close" onclick="closeTrailer()">✕ Close Trailer</button>
@@ -493,10 +507,619 @@
 
 <script>
 // ======= MOVIE DATA =======
+
+ // ======= MOVIE DATA =======
 const movies = [
+  // ======= TOLLYWOOD (TELUGU) =======
+  {
+    id: 'pushpa2',
+    title: 'Pushpa 2: The Rule',
+    year: 2024, duration: '3h 1m',
+    rating: '8.4', genre: ['Action', 'Crime'],
+    director: 'Sukumar',
+    cast: 'Allu Arjun, Rashmika Mandanna, Fahadh Faasil',
+    desc: 'The rule of Pushpa Raj begins as he faces off against Bhanwar Singh Shekhawat in this massive global blockbuster.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPAQigFcssBJaq24TnvsQbwgnVywJ-mLWev97pMYKSjxGXwMou8vDNK_gvdWRI15UyOEZ02A&s=10',
+    trailer: 'https://www.youtube.com/embed/1StdAUcreJ4', // Corrected Embed Link
+    category: ['trending', 'all', 'action', 'top10', 'tollywood']
+  },
+  {
+    id: 'kalki',
+    title: 'Kalki 2898 AD',
+    year: 2024, duration: '3h 1m',
+    rating: '8.2', genre: ['Sci-Fi', 'Mythology'],
+    director: 'Nag Ashwin',
+    cast: 'Prabhas, Amitabh Bachchan, Kamal Haasan, Deepika Padukone',
+    desc: 'A modern avatar of Vishnu is believed to have descended to Earth to protect the world from evil forces.',
+    poster: 'https://upload.wikimedia.org/wikipedia/en/4/4c/Kalki_2898_AD.jpg',
+    trailer: 'https://www.youtube.com/embed/kQDd1AhGIHk', // Corrected Embed Link
+    category: ['all', 'scifi', 'top10', 'tollywood']
+  },
+  {
+    id: 'hanuman',
+    title: 'Hanu-Man',
+    year: 2024, duration: '2h 38m',
+    rating: '8.0', genre: ['Fantasy', 'Action'],
+    director: 'Prasanth Varma',
+    cast: 'Teja Sajja, Amritha Aiyer',
+    desc: 'An imaginary place called Anjanadri where the protagonist gets the powers of Hanuman and fights for his people.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu0jzVzbJ63sMtMyJu3DMKtvoJXQcRK7ALkejEaSiQ8fJHxaOxFPtGwvCWn6WbV695BjC0&s=10',
+    trailer: 'https://www.youtube.com/embed/Oqvly3MvlXA', // Corrected Embed Link
+    category: ['all', 'trending', 'tollywood']
+  },
+
+  // ======= BOLLYWOOD (HINDI) =======
+  {
+    id: 'stree2',
+    title: 'Stree 2',
+    year: 2024, duration: '2h 27m',
+    rating: '7.8', genre: ['Horror', 'Comedy'],
+    director: 'Amar Kaushik',
+    cast: 'Rajkummar Rao, Shraddha Kapoor, Pankaj Tripathi',
+    desc: 'The town of Chanderi is haunted again, this time by a headless entity named Sarkata who is abducting women.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ3hEGSfNE8jpXwf1vvaK3m1FOlJ9kdw3g_p25dh4icEjITmXo84CJbanP-RZdFYEevJ0O&s=10',
+    trailer: 'https://www.youtube.com/embed/KVnheGkWPhw',
+    category: ['trending', 'all', 'top10', 'bollywood']
+  },
+  {
+    id: 'fighter',
+    title: 'Fighter',
+    year: 2024, duration: '2h 46m',
+    rating: '7.0', genre: ['Action', 'Thriller'],
+    director: 'Siddharth Anand',
+    cast: 'Hrithik Roshan, Deepika Padukone, Anil Kapoor',
+    desc: 'Top IAF aviators come together in the face of imminent danger to form Air Dragons, India\'s first aerial action unit.',
+    poster: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQcwzr0jg0l5QLs11G9IZ3ky7H7zOZXCbztL4LgZx3EMwGHdmOs',
+    trailer: 'https://www.youtube.com/embed/6amIq_mP4xM',
+    category: ['all', 'action', 'bollywood']
+  },
+
+  // ======= KOLLYWOOD (TAMIL) =======
+  {
+    id: 'goat',
+    title: 'GOAT',
+    year: 2024, duration: '3h 3m',
+    rating: '7.5', genre: ['Action', 'Sci-Fi'],
+    director: 'Venkat Prabhu',
+    cast: 'Thalapathy Vijay, Prashanth, Prabhu Deva',
+    desc: 'A specialized anti-terrorist squad member retires but is pulled back into a mission involving his own past.',
+    poster: 'https://cdn.gulte.com/wp-content/uploads/2024/01/Vijay-Thalapathy-The-GOAT-683x1024.jpeg',
+    trailer: 'https://www.youtube.com/embed/jzYxbnHHhY4',
+    category: ['trending', 'all', 'scifi', 'top10', 'kollywood']
+  },
+  {
+    id: 'raayan',
+    title: 'Raayan',
+    year: 2024, duration: '2h 25m',
+    rating: '7.4', genre: ['Action', 'Crime'],
+    director: 'Dhanush',
+    cast: 'Dhanush, S.J. Suryah, Sundeep Kishan',
+    desc: 'A simple man is forced into the dark world of gangsters to protect his family in this gritty action drama.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa2NtYCKPTmXLevUtgalC-JMJOTqMBE7sZG5MjDZuiYnxQxCyBxbobjvVIun1O8k1BCJ_uuQ&s=10',
+    trailer: 'https://www.youtube.com/embed/qQJJwhh-XmE', // Corrected Embed Link
+    category: ['all', 'action', 'kollywood']
+  },
+
+  // ======= MOLLYWOOD (MALAYALAM) =======
+  {
+    id: 'manjummel',
+    title: 'Manjummel Boys',
+    year: 2024, duration: '2h 15m',
+    rating: '8.6', genre: ['Adventure', 'Drama'],
+    director: 'Chidambaram',
+    cast: 'Soubin Shahir, Sreenath Bhasi',
+    desc: 'Based on a true story, a group of friends face a survival nightmare in the Guna Caves of Kodaikanal.',
+    poster: 'https://img.airtel.tv/unsafe/fit-in/500x0/filters:format(webp)/https://xstreamcp-assets-msp.streamready.in/assets/HOTSTAR_DTH/MOVIE/690de3e191efe3206b8deda5/images/PORTRAIT/1714809022275-v?o=production',
+    trailer: 'https://www.youtube.com/embed/id848Ww1YLo',
+    category: ['trending', 'all', 'top10', 'mollywood']
+  },
+  {
+    id: 'aavesham',
+    title: 'Aavesham',
+    year: 2024, duration: '2h 38m',
+    rating: '8.5', genre: ['Comedy', 'Action'],
+    director: 'Jithu Madhavan',
+    cast: 'Fahadh Faasil, Hipzster, Mithun Jai Sankar',
+    desc: 'Three teenagers come to Bangalore for their engineering education and get involved with a local gangster named Ranga.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOamEwj13pRCosl-pFWKMdcivBtWK3tdtvjiAin1ACeUxaY5IedFh3gYtfCEAkrJRzK1iyfA&s=10',
+    trailer: 'https://www.youtube.com/embed/L0yEMl-9u0I',
+    category: ['trending', 'all', 'mollywood']
+  },
+
+  // ======= HOLLYWOOD =======
   {
     id: 'oppenheimer',
     title: 'Oppenheimer',
     year: 2023, duration: '3h 0m',
     rating: '8.3', genre: ['Drama','History','Biography'],
-    director
+    director: 'Christopher Nolan',
+    cast: 'Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr.',
+    desc: 'The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb during WWII.',
+    poster: 'https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg',
+    trailer: 'https://www.youtube.com/embed/uYPbbksJxIg',
+    category: ['trending','all','top10', 'hollywood']
+  },
+  {
+    id: 'dune2',
+    title: 'Dune: Part Two',
+    year: 2024, duration: '2h 47m',
+    rating: '8.5', genre: ['Sci-Fi','Adventure'],
+    director: 'Denis Villeneuve',
+    cast: 'Timothée Chalamet, Zendaya, Rebecca Ferguson, Josh Brolin',
+    desc: 'Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators.',
+    poster: 'https://image.tmdb.org/t/p/w500/cdqLnri3NEGcmfnqwk2TSIYtddg.jpg',
+    trailer: 'https://www.youtube.com/embed/Way9Dexny3w',
+    category: ['trending','all','scifi','top10', 'hollywood']
+  },
+  // ======= KOLLYWOOD (TAMIL) =======
+  {
+    id: 'goat',
+    title: 'GOAT',
+    year: 2024, duration: '3h 3m',
+    rating: '7.5', genre: ['Action', 'Sci-Fi'],
+    director: 'Venkat Prabhu',
+    cast: 'Thalapathy Vijay, Prashanth, Prabhu Deva',
+    desc: 'A specialized anti-terrorist squad member retires but is pulled back into a mission involving his own past.',
+    poster: 'https://cdn.gulte.com/wp-content/uploads/2024/01/Vijay-Thalapathy-The-GOAT-683x1024.jpeg',
+    trailer: 'https://www.youtube.com/embed/jzYxbnHHhY4?autoplay=1',
+    category: ['trending', 'all', 'scifi', 'top10', 'kollywood']
+  },
+  {
+    id: 'raayan',
+    title: 'Raayan',
+    year: 2024, duration: '2h 25m',
+    rating: '7.4', genre: ['Action', 'Crime'],
+    director: 'Dhanush',
+    cast: 'Dhanush, S.J. Suryah, Sundeep Kishan',
+    desc: 'A simple man is forced into the dark world of gangsters to protect his family in this gritty action drama.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa2NtYCKPTmXLevUtgalC-JMJOTqMBE7sZG5MjDZuiYnxQxCyBxbobjvVIun1O8k1BCJ_uuQ&s=10',
+    trailer: 'https://www.youtube.com/embed/qQJJwhh-XmE?autoplay=1',
+    category: ['all', 'action', 'kollywood']
+  },
+
+  // ======= MOLLYWOOD (MALAYALAM) =======
+  {
+    id: 'manjummel',
+    title: 'Manjummel Boys',
+    year: 2024, duration: '2h 15m',
+    rating: '8.6', genre: ['Adventure', 'Drama'],
+    director: 'Chidambaram',
+    cast: 'Soubin Shahir, Sreenath Bhasi',
+    desc: 'Based on a true story, a group of friends face a survival nightmare in the Guna Caves of Kodaikanal.',
+    poster: 'https://img.airtel.tv/unsafe/fit-in/500x0/filters:format(webp)/https://xstreamcp-assets-msp.streamready.in/assets/HOTSTAR_DTH/MOVIE/690de3e191efe3206b8deda5/images/PORTRAIT/1714809022275-v?o=production',
+    trailer: 'https://www.youtube.com/embed/id848Ww1YLo?autoplay=1',
+    category: ['trending', 'all', 'top10', 'mollywood']
+  },
+  {
+    id: 'aavesham',
+    title: 'Aavesham',
+    year: 2024, duration: '2h 38m',
+    rating: '8.5', genre: ['Comedy', 'Action'],
+    director: 'Jithu Madhavan',
+    cast: 'Fahadh Faasil, Hipzster, Mithun Jai Sankar',
+    desc: 'Three teenagers come to Bangalore for their engineering education and get involved with a local gangster named Ranga.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOamEwj13pRCosl-pFWKMdcivBtWK3tdtvjiAin1ACeUxaY5IedFh3gYtfCEAkrJRzK1iyfA&s=10',
+    trailer: 'https://www.youtube.com/embed/L0yEMl-9u0I?autoplay=1',
+    category: ['trending', 'all', 'mollywood']
+  },
+  {
+    id: 'bramayugam',
+    title: 'Bramayugam',
+    year: 2024, duration: '2h 19m',
+    rating: '8.2', genre: ['Horror', 'Thriller'],
+    director: 'Rahul Sadasivan',
+    cast: 'Mammootty, Arjun Ashokan',
+    desc: 'In 18th century Kerala, a court singer escapes from slavery and finds refuge in a mysterious mansion.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9EMM9KVHzsmXxfXBQRGg4Ekbx_ufDUUoXj_Er7RzqanTns13aKBsKu-JBBEZ9_jUG2soW&s=10',
+    trailer: 'https://www.youtube.com/embed/nshZ_vK68Is?autoplay=1',
+    category: ['all', 'top10', 'mollywood']
+  },
+    
+  {
+    id: 'oppenheimer',
+    title: 'Oppenheimer',
+    year: 2023, duration: '3h 0m',
+    rating: '8.3', genre: ['Drama','History','Biography'],
+    director: 'Christopher Nolan',
+    cast: 'Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr.',
+    desc: 'The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb during WWII.',
+    poster: 'https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg',
+    backdrop: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&q=80',
+    trailer: 'https://www.youtube.com/embed/uYPbbksJxIg?autoplay=1',
+    category: ['trending','all','top10', 'hollywood']
+  },
+  {
+    id: 'dune2',
+    title: 'Dune: Part Two',
+    year: 2024, duration: '2h 47m',
+    rating: '8.5', genre: ['Sci-Fi','Adventure'],
+    director: 'Denis Villeneuve',
+    cast: 'Timothée Chalamet, Zendaya, Rebecca Ferguson, Josh Brolin',
+    desc: 'Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators.',
+    poster: 'https://image.tmdb.org/t/p/w500/cdqLnri3NEGcmfnqwk2TSIYtddg.jpg',
+    backdrop: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+    trailer: 'https://www.youtube.com/embed/Way9Dexny3w?autoplay=1',
+    category: ['trending','all','scifi','top10', 'hollywood']
+  },
+  {
+    id: 'poor_things',
+    title: 'Poor Things',
+    year: 2023, duration: '2h 21m',
+    rating: '7.9', genre: ['Comedy','Drama','Fantasy'],
+    director: 'Yorgos Lanthimos',
+    cast: 'Emma Stone, Mark Ruffalo, Willem Dafoe',
+    desc: 'The incredible tale of Bella Baxter, a young woman brought back to life by the brilliant surgeon Godwin Baxter.',
+    poster: 'https://m.media-amazon.com/images/S/pv-target-images/9fb2eb4085e1ef0217f5120c8262710843916e01b90d90c4fd0c27b542b89f39.jpg',
+    trailer: 'https://www.youtube.com/embed/RlOB3UALvrQ?autoplay=1',
+    category: ['trending','all','top10', 'hollywood']
+  },
+  {
+    id: 'killers',
+    title: 'Killers of the Flower Moon',
+    year: 2023, duration: '3h 26m',
+    rating: '7.6', genre: ['Crime','Drama','History'],
+    director: 'Martin Scorsese',
+    cast: 'Leonardo DiCaprio, Robert De Niro, Lily Gladstone',
+    desc: 'Members of the Osage Nation are murdered under suspicious circumstances in 1920s Oklahoma.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE42aPCK_6kGgGxB36busascgNg23ttFNGmv5qLwGZTtkVaSinBzYNg-lf7a2k-e7W9DutZct6KNaQRZPvCrqtWvjpV7Vm01kg0vFZNDxF&s=10',
+    trailer: 'https://www.youtube.com/embed/EP34Yoxs3FQ?autoplay=1',
+    category: ['trending','all','action','top10', 'hollywood']
+  },
+  {
+    id: 'saltburn',
+    title: 'Saltburn',
+    year: 2023, duration: '2h 11m',
+    rating: '7.1', genre: ['Drama','Thriller','Mystery'],
+    director: 'Emerald Fennell',
+    cast: 'Barry Keoghan, Jacob Elordi, Rosamund Pike',
+    desc: 'A student at Oxford University finds himself drawn into the world of a charming classmate.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkFPny5s_qF84_rau-oRQHvFBkNWaJVu2-jhGW3kTjlbjEq29xSehUGZbope3V1n5qfB_Y5Q&s=10',
+    trailer: 'https://www.youtube.com/embed/TBS-XKgNbAY?autoplay=1',
+    category: ['trending','all','action','top10', 'hollywood']
+  },
+  {
+    id: 'mission8',
+    title: 'Mission: Impossible – Dead Reckoning',
+    year: 2023, duration: '2h 43m',
+    rating: '7.7', genre: ['Action','Adventure','Thriller'],
+    director: 'Christopher McQuarrie',
+    cast: 'Tom Cruise, Hayley Atwell, Ving Rhames, Simon Pegg',
+    desc: 'Ethan Hunt and his IMF team must track down a terrifying new weapon.',
+    poster: 'https://image.tmdb.org/t/p/w500/NNxYkU70HPurnNCSiCjYAmacwm.jpg',
+    trailer: 'https://www.youtube.com/embed/avz06PDqDbM?autoplay=1',
+    category: ['all','action','top10', 'hollywood']
+  },
+  {
+    id: 'aquaman2',
+    title: 'Aquaman 2: The Lost Kingdom',
+    year: 2023, duration: '2h 4m',
+    rating: '5.9', genre: ['Action','Adventure','Fantasy'],
+    director: 'James Wan',
+    cast: 'Jason Momoa, Patrick Wilson, Yahya Abdul-Mateen II',
+    desc: 'Aquaman must forge an alliance with his brother Orm to protect Atlantis.',
+    poster: 'https://image.tmdb.org/t/p/w500/7lTnXOy0iNtBAdRP3TZvaKJ77F6.jpg',
+    trailer: 'https://www.youtube.com/embed/fGbxD3kpfMY?autoplay=1',
+    category: ['all','action','scifi', 'hollywood']
+  },
+  {
+    id: 'wonka',
+    title: 'Wonka',
+    year: 2023, duration: '1h 56m',
+    rating: '7.2', genre: ['Fantasy','Comedy','Musical'],
+    director: 'Paul King',
+    cast: 'Timothée Chalamet, Olivia Colman, Hugh Grant',
+    desc: 'How the world\'s greatest chocolate-maker became the beloved Willy Wonka.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrtRJVKVEsmsaq7eHik9Euw6hBfwEAwg_MmlBnp9013_31mmP6Ehp5rDyQ8-Ycr6ePyHVR&s=10',
+    trailer: 'https://www.youtube.com/embed/otNh9bTjXWg?autoplay=1',
+    category: ['all', 'hollywood']
+  },
+  {
+    id: 'spiderman',
+    title: 'Spider-Man: Across the Spider-Verse',
+    year: 2023, duration: '2h 20m',
+    rating: '8.6', genre: ['Animation','Action','Adventure'],
+    director: 'Kemp Powers',
+    cast: 'Shameik Moore, Hailee Steinfeld, Oscar Isaac',
+    desc: 'Miles Morales catapults across the Multiverse to protect its existence.',
+    poster: 'https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg',
+    trailer: 'https://www.youtube.com/embed/cqGjhVJWtEg?autoplay=1',
+    category: ['all','action','scifi','top10', 'hollywood']
+  },
+  {
+    id: 'avatar2',
+    title: 'Avatar: The Way of Water',
+    year: 2022, duration: '3h 12m',
+    rating: '7.6', genre: ['Sci-Fi','Action','Adventure'],
+    director: 'James Cameron',
+    cast: 'Sam Worthington, Zoe Saldana, Sigourney Weaver',
+    desc: 'Jake Sully lives with his newfound family formed on the moon Pandora.',
+    poster: 'https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg',
+    trailer: 'https://www.youtube.com/embed/d9MyW72ELq0?autoplay=1',
+    category: ['all','scifi','top10', 'hollywood']
+  },
+  {
+    id: 'barbie',
+    title: 'Barbie',
+    year: 2023, duration: '1h 54m',
+    rating: '6.9', genre: ['Comedy','Fantasy','Adventure'],
+    director: 'Greta Gerwig',
+    cast: 'Margot Robbie, Ryan Gosling, America Ferrera',
+    desc: 'Barbie and Ken venture to the real world.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROuK_Bl8jrLUP7fo3hsDC4XC2AC1WR1CAXS3G1SVqDPZE0pgFTQKnr8P2_cKmRuXg03nPE&s=10',
+    trailer: 'https://www.youtube.com/embed/pBk4NYhWNMM?autoplay=1',
+    category: ['all','top10', 'hollywood']
+  },
+  {
+    id: 'indiana5',
+    title: 'Indiana Jones and the Dial of Destiny',
+    year: 2023, duration: '2h 34m',
+    rating: '6.5', genre: ['Action','Adventure'],
+    director: 'James Mangold',
+    cast: 'Harrison Ford, Phoebe Waller-Bridge, Mads Mikkelsen',
+    desc: 'Indiana Jones races against time to retrieve a legendary artifact.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxKhl5t7mQW-dC2Pk94bmEabWLSU3oL3Vi7x1midYiPqu_vy3FgadgMF9BKUJcyc-TvVUv&s=10',
+    trailer: 'https://www.youtube.com/embed/eQfMbSe7F2g?autoplay=1',
+    category: ['all','action', 'hollywood']
+  },
+  {
+    id: 'interstellar',
+    title: 'Interstellar',
+    year: 2014, duration: '2h 49m',
+    rating: '8.7', genre: ['Sci-Fi','Drama','Adventure'],
+    director: 'Christopher Nolan',
+    cast: 'Matthew McConaughey, Anne Hathaway, Jessica Chastain',
+    desc: 'Explorers travel through a wormhole to ensure humanity\'s survival.',
+    poster: 'https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
+    trailer: 'https://www.youtube.com/embed/zSWdZVtXT7E?autoplay=1',
+    category: ['all','scifi','top10', 'hollywood']
+  },
+  {
+    id: 'inception',
+    title: 'Inception',
+    year: 2010, duration: '2h 28m',
+    rating: '8.8', genre: ['Sci-Fi','Thriller','Action'],
+    director: 'Christopher Nolan',
+    cast: 'Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page',
+    desc: 'A thief who steals secrets through dream-sharing technology.',
+    poster: 'https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg',
+    trailer: 'https://www.youtube.com/embed/YoHD9XEInc0?autoplay=1',
+    category: ['all','scifi','action','top10', 'hollywood']
+  },
+  {
+    id: 'tenet',
+    title: 'Tenet',
+    year: 2020, duration: '2h 30m',
+    rating: '7.3', genre: ['Sci-Fi','Action','Thriller'],
+    director: 'Christopher Nolan',
+    cast: 'John David Washington, Robert Pattinson, Elizabeth Debicki',
+    desc: 'A mission that will unfold in something beyond real time.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYoAGfY4ffCXIoBdPYfxypbrvpGxQ5FA6w0r3ihzqzMZ5kxMaPXWGE50muitVS2CULBCdGvg&s=10',
+    trailer: 'https://www.youtube.com/embed/LdOM0x0XDMo?autoplay=1',
+    category: ['all','scifi','action', 'hollywood']
+  },
+  {
+    id: 'joker2',
+    title: 'Joker: Folie à Deux',
+    year: 2024, duration: '2h 18m',
+    rating: '5.5', genre: ['Crime','Drama','Musical'],
+    director: 'Todd Phillips',
+    cast: 'Joaquin Phoenix, Lady Gaga, Zazie Beetz',
+    desc: 'Arthur Fleck stumbles upon true love and his alter ego.',
+    poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAAHXQO2orN4VL_aGhDbMvlfoDUsiQuMht8hPdieaUN9yl0FcLZwBhQwAcV4XbgbljcW9r&s=10',
+    trailer: 'https://www.youtube.com/embed/_OEQvF-HZs4?autoplay=1',
+    category: ['all','action', 'hollywood']
+  }
+];
+
+const genres = [
+  { name: '💥 Action', color: '#e50914' },
+  { name: '🚀 Sci-Fi', color: '#0070f3' },
+  { name: '😂 Comedy', color: '#f59e0b' },
+  { name: '👻 Horror', color: '#7c3aed' },
+  { name: '💕 Romance', color: '#ec4899' },
+  { name: '🕵️ Thriller', color: '#10b981' },
+  { name: '🏺 History', color: '#92400e' },
+  { name: '🎭 Drama', color: '#6366f1' },
+  { name: '🧙 Fantasy', color: '#14b8a6' },
+  { name: '🎵 Musical', color: '#f43f5e' },
+  { name: '🌍 Adventure', color: '#84cc16' },
+  { name: '🔬 Documentary', color: '#64748b' }
+];
+
+// ======= RENDER FUNCTIONS =======
+function createMovieCard(movie) {
+  const div = document.createElement('div');
+  div.className = 'movie-card';
+  div.innerHTML = `
+    <span class="card-rating">★ ${movie.rating}</span>
+    <img src="${movie.poster}" alt="${movie.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80'">
+    <div class="card-overlay">
+      <button class="card-play" onclick="event.stopPropagation();openTrailerById('${movie.id}')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+      </button>
+      <div class="card-title">${movie.title}</div>
+      <div class="card-year">${movie.year} · ${movie.genre[0]}</div>
+    </div>
+  `;
+  div.onclick = () => openMovieById(movie.id);
+  return div;
+}
+
+function renderRow(containerId, filter) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const filtered = filter ? movies.filter(m => m.category.includes(filter)) : movies;
+  filtered.forEach(m => container.appendChild(createMovieCard(m)));
+}
+
+function renderTop10() {
+  const container = document.getElementById('top10Row');
+  const top = movies.filter(m => m.category.includes('top10')).slice(0,10);
+  top.forEach((m, i) => {
+    const div = document.createElement('div');
+    div.className = 'top10-card';
+    div.innerHTML = `
+      <span class="top10-num">${i+1}</span>
+      <img class="top10-img" src="${m.poster}" alt="${m.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=80'">
+    `;
+    div.onclick = () => openMovieById(m.id);
+    container.appendChild(div);
+  });
+}
+
+function renderGenres() {
+  const container = document.getElementById('genreGrid');
+  genres.forEach(g => {
+    const div = document.createElement('div');
+    div.className = 'genre-pill';
+    div.textContent = g.name;
+    div.style.borderColor = g.color + '40';
+    div.style.background = g.color + '15';
+    div.style.color = g.color;
+    container.appendChild(div);
+  });
+}
+
+// ======= MODAL =======
+function openMovieById(id) {
+  const movie = movies.find(m => m.id === id);
+  if (!movie) return;
+  document.getElementById('modalTitle').textContent = movie.title;
+  document.getElementById('modalDesc').textContent = movie.desc;
+  document.getElementById('modalDirector').textContent = movie.director;
+  document.getElementById('modalCast').textContent = movie.cast;
+  const meta = document.getElementById('modalMeta');
+  meta.innerHTML = `
+    <span class="meta-tag rating">★ ${movie.rating}/10</span>
+    <span class="meta-tag">${movie.year}</span>
+    <span class="meta-tag">${movie.duration}</span>
+    ${movie.genre.map(g => `<span class="meta-tag genre">${g}</span>`).join('')}
+  `;
+  const videoArea = document.getElementById('modalVideoArea');
+  videoArea.innerHTML = `
+    <div class="modal-video-placeholder">
+      <img src="${movie.backdrop || movie.poster}" alt="${movie.title}">
+      <button class="play-trailer-btn" onclick="openTrailerById('${movie.id}')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        Watch Trailer
+      </button>
+    </div>
+  `;
+  document.getElementById('modalTrailerBtn').onclick = () => openTrailerById(movie.id);
+  document.getElementById('movieModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('movieModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// ======= TRAILER =======
+function openTrailerById(id) {
+  const movie = movies.find(m => m.id === id);
+  if (!movie) return;
+  closeModal();
+  const overlay = document.getElementById('trailerOverlay');
+  const content = document.getElementById('trailerContent');
+  if (movie.trailer) {
+    content.innerHTML = `<iframe src="${movie.trailer}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+  } else {
+    content.innerHTML = `<div class="no-trailer"><div class="no-trailer-icon">🎬</div><p>Trailer not available</p></div>`;
+  }
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeTrailer() {
+  document.getElementById('trailerOverlay').classList.remove('active');
+  document.getElementById('trailerContent').innerHTML = '';
+  document.body.style.overflow = '';
+}
+
+// Close on backdrop click
+document.getElementById('movieModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.getElementById('trailerOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeTrailer();
+});
+
+// ESC key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeModal(); closeTrailer(); }
+});
+
+// ======= NAV SCROLL =======
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ======= SEARCH =======
+document.getElementById('searchInput').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  if (!q) { renderAllRows(); return; }
+  const results = movies.filter(m =>
+    m.title.toLowerCase().includes(q) ||
+    m.genre.some(g => g.toLowerCase().includes(q)) ||
+    m.director.toLowerCase().includes(q)
+  );
+  const row = document.getElementById('allMoviesRow');
+  row.innerHTML = '';
+  if (results.length === 0) {
+    row.innerHTML = '<p style="color:var(--muted);padding:1rem">No movies found.</p>';
+  } else {
+    results.forEach(m => row.appendChild(createMovieCard(m)));
+  }
+  document.getElementById('allMoviesRow').closest('.section').scrollIntoView({ behavior: 'smooth' });
+});
+
+// ======= SCROLL REVEAL =======
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ======= LOADING BAR =======
+function animateLoad() {
+  const bar = document.getElementById('loadBar');
+  let w = 0;
+  const t = setInterval(() => {
+    w += Math.random() * 15;
+    if (w >= 100) { w = 100; clearInterval(t); setTimeout(() => bar.style.opacity = 0, 300); }
+    bar.style.width = w + '%';
+  }, 100);
+}
+
+// ======= INIT =======
+function renderAllRows() {
+  document.getElementById('trendingRow').innerHTML = '';
+  document.getElementById('allMoviesRow').innerHTML = '';
+  document.getElementById('tollywoodRow').innerHTML = '';
+  document.getElementById('bollywoodRow').innerHTML = '';
+  document.getElementById('kollywoodRow').innerHTML = '';
+  document.getElementById('mollywoodRow').innerHTML = '';
+  document.getElementById('hollywoodRow').innerHTML = '';
+
+  renderRow('trendingRow', 'trending');
+  renderRow('allMoviesRow', 'all');
+  renderRow('tollywoodRow', 'tollywood');
+  renderRow('bollywoodRow', 'bollywood');
+  renderRow('kollywoodRow', 'kollywood');
+  renderRow('mollywoodRow', 'mollywood');
+  renderRow('hollywoodRow', 'hollywood');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  animateLoad();
+  renderAllRows();
+  renderTop10();
+  renderGenres();
+  // Re-observe after render
+  setTimeout(() => {
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }, 100);
+});
+</script>
+</body>
+</html>
